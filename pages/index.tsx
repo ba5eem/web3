@@ -82,7 +82,7 @@ export default function App() {
   const [options, setOptions] = useState(options_default);
   // modal
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState(0);
 
   useEffect(function () {
     axios.get(bitcoin)

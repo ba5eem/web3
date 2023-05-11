@@ -1,0 +1,91 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: 800px;
+  margin: 0 auto;
+  flex-direction: row;
+
+}
+
+.item {
+  width: 28%;
+  margin: 20px;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex; /* added */
+  flex-direction: column; /* added */
+  align-items: center; /* added */
+
+}
+
+.imageContainer {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.buttonCost {
+  flex: 0.5;
+  padding: 4px;
+  color: black;
+
+  border: 1px solid rgba(108,98,219, 0.3);
+  border-radius: 10px;
+  margin: 10px;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+.buttonSell {
+  flex: 0.5;
+  padding: 4px;
+  color: white;
+  background-color: salmon;
+  border: 1px solid rgba(108,98,219, 0.3);
+  border-radius: 10px;
+  margin: 10px;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.modal img {
+  max-height: 90vh;
+  max-width: 90vw;
+}

@@ -7,7 +7,7 @@ export default function AppWrapper({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>{pageProps.title ? pageProps.title : "Our Basic Title"}</title>
+        <title>{pageProps.title ? pageProps.title : "Trade Crypto"}</title>
       </Head>
       <Layout>
         <Component {...pageProps} />

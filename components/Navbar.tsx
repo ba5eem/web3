@@ -14,13 +14,13 @@ export default function Navbar(){
       </div>
       <div className="navbar-right">
         <div className="icon-spot">
-          <a className="custom-Link"><BsGithub/></a>
+          <a href="https://github.com/ba5eem" className="custom-Link"><BsGithub/></a>
         </div>
         <div className="icon-spot">
-          <a className="custom-Link"><FaAddressBook/></a>
+          <a href="https://www.linkedin.com/in/bmissaghi/" className="custom-Link"><FaAddressBook/></a>
         </div>
         <div className="icon-spot">
-          <a className="custom-Link"><BsFillGearFill/></a>
+          <a href="https://github.com/ba5eem" className="custom-Link"><BsFillGearFill/></a>
         </div>
       </div>
     </div>

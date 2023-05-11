@@ -95,10 +95,7 @@ export default function App() {
             borderColor: 'green',
 
           },
-        ],
-        options: {
-         animation: false
-        }
+        ]
       })
     });
     // TODO call api every hour or so to update price
@@ -118,10 +115,7 @@ export default function App() {
             borderColor: 'blue',
 
           },
-        ],
-        options: {
-         animation: true
-        }
+        ]
       })
     });
 
@@ -141,10 +135,7 @@ export default function App() {
             borderColor: 'orange',
 
           },
-        ],
-        options: {
-         animation: true
-        }
+        ]
       })
     });
 

@@ -37,7 +37,7 @@ function makeDate(unixTimestamp){
   const month = ('0' + (date.getMonth() + 1)).slice(-2);
   const day = ('0' + date.getDate()).slice(-2);
   const formattedDate = `${year}-${month}-${day}`;
-  console.log(formattedDate);
+ // console.log(formattedDate);
   return formattedDate
 }
 
@@ -80,6 +80,9 @@ export default function App() {
   const [ethereumData, setEthereumData] = useState(data_default);
   const [dogeData, setDogeData] = useState(data_default);
   const [options, setOptions] = useState(options_default);
+  // modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [amount, setAmount] = useState('');
 
   useEffect(function () {
     axios.get(bitcoin)
@@ -142,9 +145,30 @@ export default function App() {
   }, []);
 
 
+   const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleAmountChange = (event) => {
+    const { value } = event.target;
+
+    setAmount(value);
+  };
+
+  const handleBuy = (amount) => () => {
+    console.log(amount);
+  }
+
+
+
   
 
-
+  let coinPrices = bitcoinData.datasets[0].data
+  let coinPrice = bitcoinData.datasets[0].data[coinPrices.length-1]
 
 
   return (
@@ -158,7 +182,7 @@ export default function App() {
             </div>
           </div>
           <div className="small-div-bottom">
-            <button>BUY</button>
+            <button onClick={openModal}>BUY</button>
             <button>SELL</button>
           </div>
          </div>
@@ -189,7 +213,28 @@ export default function App() {
             <button>SELL</button>
           </div>
          </div>
-      
+        
+
+        {isModalOpen && (<div className="modal-container">
+          <div className="modal">
+            <h2>Buy Bitcoin @ ${Math.floor(coinPrice)}</h2>
+            <div className="input-wrapper">
+              <label htmlFor="amount">Amount</label>
+              <input
+                className="modal-input"
+                type="text"
+                id="amount"
+        
+                value={amount}
+                onChange={handleAmountChange}/>
+            </div>
+            <h2>${Math.floor(amount * coinPrice)}</h2>
+            <div className="modal-buttons">
+              <button className="modal-buttons-buy"onClick={handleBuy(amount)}>Buy</button>
+              <button className="modal-buttons-cancel"onClick={closeModal}>Cancel</button>
+            </div>
+          </div>
+          </div>)}
 
         <div className="main-chart">
           {bitcoinData ? <Line options={options} data={bitcoinData} /> : null}
